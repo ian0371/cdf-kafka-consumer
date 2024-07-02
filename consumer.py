@@ -1,6 +1,10 @@
 import struct
-from confluent_kafka import Consumer, KafkaException, KafkaError, \
-    TopicPartition
+from confluent_kafka import (
+    Consumer,
+    KafkaException,
+    KafkaError,
+    TopicPartition,
+)
 from segment import Segment, insert_segment, handle_buffered_messages
 from typing import List
 import json
@@ -16,7 +20,7 @@ conf = {
 # Subscribe to the topic
 topic = "local.klaytn.chaindatafetcher.en-0.tracegroup.v1"
 partition = 0
-offset = 6046
+offset = 0
 buffer: List[List[Segment]] = []
 
 # Create the Kafka consumer
